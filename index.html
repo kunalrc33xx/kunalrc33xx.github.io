@@ -1,49 +1,207 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
-    <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
-        header { text-align: center; padding: 50px 0; }
-        h1 { margin-bottom: 10px; }
-        section { margin-bottom: 40px; }
-        .project-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunal Roy Chowdhury | Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root {
+--primary-color: #2563eb;
+--text-color: #333;
+--bg-color: #fff;
+--section-bg: #f8f9fa;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+color: var(--text-color);
+margin: 0;
+padding: 0;
+}
+/* Navigation */
+nav {
+background: #fff;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+}
+.nav-container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 1rem 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); }
+.nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-color); font-weight: 500; }
+.nav-links a:hover { color: var(--primary-color); }
+/* Hero Section */
+header {
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 120px 20px 80px;
+text-align: center;
+}
+h1 { margin-bottom: 10px; font-size: 2.5rem; }
+.subtitle { font-size: 1.2rem; color: #666; margin-bottom: 20px; }
+.social-links a {
+font-size: 1.5rem;
+margin: 0 10px;
+color: #555;
+transition: color 0.3s;
+}
+.social-links a:hover { color: var(--primary-color); }
+/* General Sections /
+section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
+section h2 { border-bottom: 2px solid var(--primary-color); display: inline-block; margin-bottom: 30px; }
+/ Experience Timeline /
+.timeline-item {
+margin-bottom: 30px;
+border-left: 3px solid var(--primary-color);
+padding-left: 20px;
+}
+.role { font-weight: bold; font-size: 1.1rem; }
+.company { color: var(--primary-color); font-weight: 600; }
+.date { font-size: 0.9rem; color: #777; margin-bottom: 10px; display: block; }
+/ Skills Grid /
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+gap: 15px;
+text-align: center;
+}
+.skill-tag {
+background: var(--section-bg);
+padding: 10px;
+border-radius: 5px;
+border: 1px solid #ddd;
+font-weight: 500;
+}
+/ Footer */
+footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 50px; }
+</style>
 </head>
 <body>
-
-    <header>
-        <h1>[Your Name]</h1>
-        <p>Aspiring Professional | Data | Strategy</p>
-        <p><a href="#">LinkedIn</a> | <a href="#">Email</a></p>
-    </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Write a short bio here. Mention your background, your university (UMD), and what kind of roles you are looking for.</p>
-    </section>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul>
-            <li><strong>Role Name</strong> - Company Name (Date - Date)<br>Short description of what you did.</li>
-            <li><strong>Role Name</strong> - Company Name (Date - Date)<br>Short description of what you did.</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Project Title 1</h3>
-            <p>A brief description of the project. What problem did it solve?</p>
-            <a href="#">View Code</a>
-        </div>
-        <div class="project-card">
-            <h3>Project Title 2</h3>
-            <p>A brief description of the project.</p>
-            <a href="#">View Code</a>
-        </div>
-    </section>
-
+<nav>
+<div class="nav-container">
+<div class="logo">Kunal RC</div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+</div>
+</div>
+</nav>
+<header>
+<h1>Kunal Roy Chowdhury</h1>
+<p class="subtitle">Risk Assessment & Compliance Specialist | MSBA @ UMD | Data-driven professional focused on leveraging data for strategic decisions</p>
+<div class="social-links">
+<a href="https://www.linkedin.com/in/kunal-roy-chowdhury/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://github.com/krockxz" target="_blank"><i class="fab fa-github"></i></a>
+<a href="mailto:kunalrc33@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+</header>
+<section id="about">
+<h2>About Me</h2>
+<p>
+Data-driven professional with experience as a Consultant at Protiviti, specializing in enterprise risk management, project management, and FCPA compliance.
+Currently pursuing a Master of Science in Business Analytics (MSBA) at the University of Maryland - Robert H. Smith School of Business in College Park (GPA: 3.1).
+</p>
+<p>
+Seeking opportunities in data analytics, risk assessment, compliance, and strategic decision-making roles. Recognized achievements include the Quarterly Rising Accelerator Award at Protiviti and leadership roles such as President of the Smith Masters Business Analytics Association and Student Ambassador for Professional Development.
+</p>
+</section>
+<section id="experience">
+<h2>Experience</h2>
+<div class="timeline-item">
+<div class="role">Consultant</div>
+<span class="company">Protiviti</span>
+<span class="date">01/2025 - 06/2025</span>
+<ul>
+<li>Collaborated with a team of eight individuals to develop and refine Enterprise Risk Management (ERM) frameworks, integrating risk management into clients' strategic planning and decision-making processes, helping mitigate, monitor, and report potential risks.</li>
+<li>Enhanced risk assessment process by developing and optimizing a project tracking tool using Azure DevOps, driving greater transparency, efficiency, and accountability across all project engagements.</li>
+<li>Identified 30+ design gaps and assisted the client in resolving 15+ regulatory gaps, contributing to a 30% improvement in control operating effectiveness.</li>
+</ul>
+</div>
+<div class="timeline-item">
+<div class="role">Junior Consultant</div>
+<span class="company">Protiviti</span>
+<span class="date">09/2023 - 12/2024</span>
+<ul>
+<li>Led end-to-end design and operational testing of 70+ internal controls for a Fortune 10 tech company, ensuring compliance with the Foreign Corrupt Practices Act (FCPA), Partner Agreement requirements, and SOX regulations.</li>
+<li>Spearheaded 10+ international projects focusing on risk assessment and process optimization, increasing overall client revenue while coordinating cross-functional stakeholders to achieve a 97% on-time project completion rate.</li>
+<li>Delivered comprehensive audit reports to senior management, identifying corrective actions that addressed compliance gaps and uncovered potential future revenue opportunities.</li>
+</ul>
+</div>
+</section>
+<section id="education">
+<h2>Education</h2>
+<div class="timeline-item">
+<div class="role">Master of Science in Business Analytics</div>
+<span class="company">University of Maryland, College Park</span>
+<span class="date">08/2025 - 12/2026 • GPA: 3.1</span>
+</div>
+<div class="timeline-item">
+<div class="role">Bachelor of Business Administration</div>
+<span class="company">Guru Gobind Singh Indraprastha University</span>
+<span class="date">08/2019 - 06/2022 • GPA: 3.52</span>
+</div>
+</section>
+<section id="skills">
+<h2>Technical Skills</h2>
+<div class="skills-grid">
+<div class="skill-tag">Project Management</div>
+<div class="skill-tag">Enterprise Risk Management</div>
+<div class="skill-tag">Microsoft Excel</div>
+<div class="skill-tag">FCPA & SOX Compliance</div>
+<div class="skill-tag">Risk & Compliance Management</div>
+<div class="skill-tag">Power BI</div>
+<div class="skill-tag">Azure DevOps</div>
+<div class="skill-tag">SQL</div>
+<div class="skill-tag">Business Analysis</div>
+<div class="skill-tag">Data Visualization and Presentation</div>
+<div class="skill-tag">Project Reporting</div>
+<div class="skill-tag">Python</div>
+<div class="skill-tag">Data Analysis using R</div>
+<div class="skill-tag">Tableau</div>
+</div>
+</section>
+<section id="projects">
+<h2>Projects</h2>
+<div class="timeline-item">
+<div class="role">CAVA Growth Strategy: Mediterranean Fast-Casual Expansion</div>
+<span class="date"></span>
+<ul>
+<li>Developed a 3–5 year national growth strategy for CAVA, identifying high-potential Texas and Florida markets by analyzing demographic density with HHI 11–24% above state medians.</li>
+<li>Conducted competitive benchmarking against Chipotle and Sweetgreen, positioning CAVA’s value-for-money offering as a key driver for customer acquisition.</li>
+<li>Developed a 3–5 year national growth strategy for CAVA, identifying high-potential Texas and Florida markets by analyzing demographic density with HHI 11–24% above state medians.</li>
+</ul>
+</div>
+<div class="timeline-item">
+<div class="role">gostman</div>
+<span class="date">GitHub Repository</span>
+<p>Gostman is a modern, privacy-first HTTP client built to prove that developer tools can be powerful without being bloated. By combining the raw performance of Go with the reactive UI of React (via W…</p>
+<a href="https://github.com/krockxz/gostman" target="_blank">View on GitHub</a>
+</div>
+<div class="timeline-item">
+<div class="role">servantsofknowledge</div>
+<span class="date">GitHub Repository (Forked)</span>
+<p>A Python library for processing scanned book pages into searchable PDFs with advanced image processing capabilities including cropping, deskewing, OCR support, and multi-language text recognition.</p>
+<a href="https://github.com/krockxz/servantsofknowledge" target="_blank">View on GitHub</a>
+</div>
+<div class="timeline-item">
+<div class="role">portfoliov1</div>
+<span class="date">GitHub Repository</span>
+<p>v1 of my Next.js portfolio</p>
+<a href="https://github.com/krockxz/portfoliov1" target="_blank">View on GitHub</a>
+</div>
+</section>
+<footer>
+<p>&copy; 2026 Kunal Roy Chowdhury. Built with GitHub Pages.</p>
+</footer>
 </body>
 </html>
