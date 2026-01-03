@@ -3,28 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kunal Roy Chowdhury | Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<title>Kunal Roy Chowdhury | Business Analyst</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
     :root {
-        --primary-color: #2563eb;
-        --text-color: #333;
-        --bg-color: #fff;
-        --section-bg: #f8f9fa;
+        --primary: #2563eb;
+        --secondary: #1e40af;
+        --dark: #1f2937;
+        --light: #f3f4f6;
+        --white: #ffffff;
+        --accent: #eff6ff;
     }
 
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Inter', 'Segoe UI', sans-serif;
         line-height: 1.6;
-        color: var(--text-color);
+        color: var(--dark);
         margin: 0;
         padding: 0;
+        background-color: var(--white);
     }
 
     /* Navigation */
     nav {
-        background: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         position: fixed;
         width: 100%;
         top: 0;
@@ -32,113 +36,165 @@
     }
 
     .nav-container {
-        max-width: 1200px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 1rem 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap; 
     }
 
-    .logo { 
-        font-size: 1.2rem; 
-        font-weight: bold; 
-        color: var(--primary-color); 
-        margin-right: 20px;
-    }
-    
-    .nav-links {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+    .nav-links { display: flex; gap: 25px; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--primary); }
 
-    .nav-links a { 
-        text-decoration: none; 
-        color: var(--text-color); 
-        font-weight: 500; 
-        font-size: 0.9rem;
-    }
-    
-    .nav-links a:hover { color: var(--primary-color); }
-
-    /* Hero Section */
+    /* Hero Section - The "Hook" */
     header {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        padding: 140px 20px 60px;
+        max-width: 900px;
+        margin: 120px auto 60px;
+        padding: 0 20px;
         text-align: center;
     }
 
-    /* Profile Image Styling */
     .profile-img {
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
-        border: 4px solid white;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         object-fit: cover;
-        margin-bottom: 20px;
+        border: 4px solid var(--white);
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+        margin-bottom: 25px;
     }
 
-    h1 { margin-bottom: 10px; font-size: 2.5rem; }
-    .subtitle { font-size: 1.2rem; color: #666; margin-bottom: 20px; }
+    h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: -0.02em; line-height: 1.1; }
     
-    .social-links {
+    .tagline {
+        font-size: 1.5rem;
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .hook {
+        font-size: 1.2rem;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+    }
+
+    .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.2s, background 0.2s;
+        margin: 5px;
+    }
+    .btn:hover { background: var(--secondary); transform: translateY(-2px); }
+    .btn-outline { background: white; color: var(--primary); border: 2px solid var(--primary); }
+    .btn-outline:hover { background: var(--accent); }
+
+    /* General Layout */
+    section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+    .section-title { 
+        font-size: 1.8rem; 
+        font-weight: 700; 
+        margin-bottom: 40px; 
+        border-left: 5px solid var(--primary);
+        padding-left: 15px;
+    }
+
+    /* PROJECTS - Visual Cards */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    .project-card {
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 25px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        margin-top: 20px;
     }
 
-    .social-item {
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        border-color: var(--primary);
+    }
+
+    .project-icon {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+    }
+
+    .project-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
+    .project-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; flex-grow: 1; }
+    
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .tech-tag {
+        background: var(--accent);
+        color: var(--secondary);
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-weight: 600;
+    }
+
+    .project-link {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 0.9rem;
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-size: 1.1rem;
-        color: #555;
+        gap: 5px;
     }
+    .project-link:hover { text-decoration: underline; }
 
-    .social-item a {
-        color: #555;
-        text-decoration: none;
-        transition: color 0.3s;
+    /* EXPERIENCE - Clean Timeline */
+    .exp-item {
+        background: var(--light);
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        border-left: 4px solid #ccc;
     }
-    .social-item a:hover { color: var(--primary-color); }
-    .social-item i { font-size: 1.5rem; }
-
-    /* General Sections */
-    section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
-    section h2 { border-bottom: 2px solid var(--primary-color); display: inline-block; margin-bottom: 30px; }
-
-    /* Experience Timeline */
-    .timeline-item {
-        margin-bottom: 30px;
-        border-left: 3px solid var(--primary-color);
-        padding-left: 20px;
-    }
-    .role { font-weight: bold; font-size: 1.1rem; }
-    .company { color: var(--primary-color); font-weight: 600; }
-    .date { font-size: 0.9rem; color: #777; margin-bottom: 10px; display: block; }
+    .exp-item.featured { border-left-color: var(--primary); background: white; border: 1px solid #e5e7eb; border-left: 5px solid var(--primary); }
     
-    /* Skills Grid */
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 15px;
-        text-align: center;
-    }
-    .skill-tag {
-        background: var(--section-bg);
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        font-weight: 500;
-    }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 10px; }
+    .exp-role { font-weight: 700; font-size: 1.1rem; }
+    .exp-company { color: var(--primary); font-weight: 600; }
+    .exp-date { font-size: 0.9rem; color: #777; }
+    
+    .early-career { font-size: 0.9rem; color: #666; margin-top: 30px; }
+    .early-career h3 { font-size: 1.1rem; margin-bottom: 10px; }
+
+    /* SKILLS - Categorized */
+    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+    .skill-category h3 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+    .skill-list { list-style: none; padding: 0; }
+    .skill-list li { margin-bottom: 8px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+    .skill-list i { color: var(--primary); font-size: 0.8rem; }
+
+    /* ABOUT - Narrative */
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+    @media(min-width: 768px) { .about-grid { grid-template-columns: 2fr 1fr; } }
 
     /* Footer */
-    footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 50px; }
+    footer { text-align: center; padding: 40px; color: #777; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 60px; }
+
 </style>
 </head>
 <body>
@@ -147,251 +203,196 @@
         <div class="nav-container">
             <div class="logo">Kunal Roy Chowdhury</div>
             <div class="nav-links">
-                <a href="#about">About</a>
+                <a href="#projects">Work</a>
                 <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#volunteering">Volunteering</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="Kunal_R_Chowdhury_Resume.pdf" target="_blank" style="color: var(--primary); font-weight: 700;">Resume</a>
             </div>
         </div>
     </nav>
 
     <header>
         <img src="profile.jpeg" alt="Kunal Roy Chowdhury" class="profile-img">
-        
         <h1>Kunal Roy Chowdhury</h1>
-        <p class="subtitle">Risk Assessment & Compliance Specialist | MSBA @ UMD</p>
-        
-        <div class="social-links">
-            <div class="social-item">
-                <a href="https://www.linkedin.com/in/kunal-roy-chowdhury/" target="_blank">
-                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                </a>
-            </div>
-            
-            <div class="social-item">
-                <i class="fas fa-envelope"></i>
-                <span>kunalrc33@gmail.com</span>
-            </div>
+        <div class="tagline">Business Analyst & Data Strategist</div>
+        <p class="hook">
+            Former Risk Consultant turning messy data into strategic decisions. 
+            <br>Bridging the gap between corporate strategy and advanced analytics.
+        </p>
+        <div>
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="https://linkedin.com/in/kunal-roy-chowdhury" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Kunal Roy Chowdhury is a former Consultant at Protiviti, where he led a team of eight on international risk and compliance engagements for a Fortune 10 technology company. His experience spans enterprise risk management, FCPA and SOX compliance, and large-scale control testing, including end-to-end design and operational testing of 70+ internal controls and the delivery of risk assessment insights to senior leadership. He also spearheaded multiple cross-border projects focused on risk assessment and process optimization, improving control effectiveness and enhancing transparency through data-driven tools such as Azure DevOps and Power BI.
-        </p>
-        <p>
-            He is currently pursuing a Master of Science in Business Analytics at the University of Maryland's Robert H. Smith School of Business, where he serves as a Student Ambassador for Professional Development and was elected President of the MSBA cohort. Kunal is passionate about leveraging data-driven insights to inform strategic decisions, drive sustainable growth, and create positive impact within organizations and the wider world.
-        </p>
+    <section id="projects">
+        <div class="section-title">Featured Projects</div>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="project-title">CAVA Growth Strategy</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Corporate Strategy</span>
+                    <span class="tech-tag">Market Analysis</span>
+                    <span class="tech-tag">Excel</span>
+                </div>
+                <div class="project-desc">
+                    Designed a "Sustainable Moat" strategy leveraging vertical integration to enable 14% underpricing vs. competitors. Developed a market selection model targeting high-HHI regions in Texas & Florida.
+                </div>
+                <a href="https://github.com/kunalrc33xx/cava-growth-strategy" target="_blank" class="project-link">View Strategy Deck <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-brain"></i></div>
+                <div class="project-title">Predicting Health Risks (ML)</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Random Forest</span>
+                    <span class="tech-tag">K-Means</span>
+                </div>
+                <div class="project-desc">
+                    Built a multi-class classification model to predict obesity levels with high accuracy. Used unsupervised clustering to identify family history and transportation as primary risk factors.
+                </div>
+                <a href="https://github.com/kunalrc33xx/obesity-level-prediction-ml" target="_blank" class="project-link">View Code & Model <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-truck-moving"></i></div>
+                <div class="project-title">Supply Chain Optimization</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">AMPL</span>
+                    <span class="tech-tag">Gurobi</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+                <div class="project-desc">
+                    Solved a complex logistics problem using Linear Programming. Optimized warehouse selection and routing to achieve $56,811 daily profit, beating the baseline by 10%.
+                </div>
+                <a href="https://github.com/kunalrc33xx/retail-supply-chain-optimization" target="_blank" class="project-link">View Optimization <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-bed"></i></div>
+                <div class="project-title">Student Performance Analytics</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">R Studio</span>
+                    <span class="tech-tag">Linear Regression</span>
+                    <span class="tech-tag">Statistics</span>
+                </div>
+                <div class="project-desc">
+                    Proved via regression analysis that "Academic Pressure" outweighs sleep duration as a grade predictor. Quantified a 66% increase in depression risk for high-pressure segments.
+                </div>
+                <a href="https://github.com/kunalrc33xx/student-sleep-stress-analytics" target="_blank" class="project-link">View Analysis <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-search-dollar"></i></div>
+                <div class="project-title">B2B Operational Analysis</div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Market Research</span>
+                    <span class="tech-tag">Supply Chain Audit</span>
+                </div>
+                <div class="project-desc">
+                    Uncovered a critical quality control issue (preservative levels) causing 18% of customer churn. Validated the roadmap for digital transformation based on offline user behavior.
+                </div>
+                <a href="https://github.com/kunalrc33xx/ucliq-market-analysis" target="_blank" class="project-link">View Insights <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" style="background: #fafafa; border-radius: 12px;">
+        <div class="section-title">Technical Arsenal</div>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Data Analysis & ML</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-check"></i> Python (Pandas, Scikit-Learn)</li>
+                    <li><i class="fas fa-check"></i> R Studio (Regression, Stats)</li>
+                    <li><i class="fas fa-check"></i> SQL (Data Querying)</li>
+                    <li><i class="fas fa-check"></i> Machine Learning Algorithms</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Business Strategy</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-check"></i> Enterprise Risk Management</li>
+                    <li><i class="fas fa-check"></i> Process Optimization</li>
+                    <li><i class="fas fa-check"></i> FCPA & SOX Compliance</li>
+                    <li><i class="fas fa-check"></i> Market Research</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Visualization</h3>
+                <ul class="skill-list">
+                    <li><i class="fas fa-check"></i> Tableau & Power BI</li>
+                    <li><i class="fas fa-check"></i> Azure DevOps</li>
+                    <li><i class="fas fa-check"></i> Advanced Excel</li>
+                    <li><i class="fas fa-check"></i> AMPL / Gurobi</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="experience">
-        <h2>Experience</h2>
-        <div class="timeline-item">
-            <div class="role">Consultant</div>
-            <span class="company">Protiviti</span>
-            <span class="date">01/2025 - 06/2025</span>
-            <ul>
-                <li>Collaborated with a team of eight individuals to develop and refine Enterprise Risk Management (ERM) frameworks, integrating risk management into clients' strategic planning and decision-making processes.</li>
-                <li>Enhanced risk assessment process by developing and optimizing a project tracking tool using Azure DevOps, driving greater transparency, efficiency, and accountability across all project engagements.</li>
-                <li>Identified 30+ design gaps and assisted the client in resolving 15+ regulatory gaps, contributing to a 30% improvement in control operating effectiveness.</li>
-            </ul>
-        </div>
+        <div class="section-title">Experience</div>
         
-        <div class="timeline-item">
-            <div class="role">Junior Consultant</div>
-            <span class="company">Protiviti</span>
-            <span class="date">09/2023 - 12/2024</span>
+        <div class="exp-item featured">
+            <div class="exp-header">
+                <div class="exp-role">Consultant (Risk & Compliance)</div>
+                <div class="exp-company">Protiviti</div>
+                <div class="exp-date">09/2023 - 06/2025</div>
+            </div>
             <ul>
-                <li>Led end-to-end design and operational testing of 70+ internal controls for a Fortune 10 tech company, ensuring compliance with the Foreign Corrupt Practices Act (FCPA), Partner Agreement requirements, and SOX regulations.</li>
-                <li>Spearheaded 10+ international projects focusing on risk assessment and process optimization, increasing overall client revenue while coordinating cross-functional stakeholders to achieve a 97% on-time project completion rate.</li>
-                <li>Delivered comprehensive audit reports to senior management, identifying corrective actions that addressed compliance gaps and uncovered potential future revenue opportunities.</li>
+                <li><strong>Strategic Impact:</strong> Led end-to-end design and testing of 70+ internal controls for a Fortune 10 Tech Giant, ensuring FCPA/SOX compliance.</li>
+                <li><strong>Process Optimization:</strong> Developed a project tracking tool in Azure DevOps that improved transparency and accountability across international engagements.</li>
+                <li><strong>Data-Driven Results:</strong> Identified 30+ design gaps and resolved 15+ regulatory issues, driving a 30% improvement in control operating effectiveness.</li>
             </ul>
         </div>
 
-        <div class="timeline-item">
-            <div class="role">Capitalization Intern</div>
-            <span class="company">BSES Delhi</span>
-            <span class="date">02/2022 - 05/2022</span>
-            <ul>
-                <li>Analyzed and estimated costs for various government projects to ensure sufficient power supply, accurately forecasting expenses for project capitalization.</li>
-                <li>Prepared and maintained detailed cost sheets to facilitate the capitalization process and ensured accurate financial documentation for all project stakeholders.</li>
-                <li>Coordinated with internal stakeholders and government officials to ensure timely notice of all project updates and requirements.</li>
-            </ul>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">Project Intern</div>
-            <span class="company">Sustainable Solution Provider (SSP)</span>
-            <span class="date">05/2021 - 09/2021</span>
-            <ul>
-                <li>Supported the project management team in delivering effective solutions by analyzing market trends and client needs.</li>
-                <li>Contributed to the optimization of resource allocation, reducing project costs by 15% through detailed analysis of project requirements.</li>
-                <li>Assisted in project documentation ensuring all project solutions and deliverables were prepared with a focus on excellence and international standards.</li>
-            </ul>
+        <div class="early-career">
+            <h3>Early Career</h3>
+            <p><strong>BSES Delhi (2022):</strong> Capitalization Intern - Analyzed government project costs and forecasted expenses.</p>
+            <p><strong>SSP (2021):</strong> Project Intern - Optimized resource allocation to reduce project costs by 15%.</p>
         </div>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="timeline-item">
-            <div class="role">Master of Science in Business Analytics</div>
-            <span class="company">University of Maryland, College Park</span>
-            <span class="date">08/2025 - 12/2026 • GPA: 3.1</span>
+    <section id="about">
+        <div class="about-grid">
+            <div>
+                <div class="section-title">My Journey</div>
+                <p>
+                    I don't just analyze data; I translate it into business value. 
+                </p>
+                <p>
+                    My career started in <strong>Risk Consulting at Protiviti</strong>, where I learned how businesses break—analyzing gaps in processes, compliance, and strategy for Fortune 10 clients. While I loved the problem-solving, I realized the future of decision-making wasn't just in audits, but in **predictive analytics**.
+                </p>
+                <p>
+                    Now, pursuing my <strong>MS in Business Analytics at UMD</strong>, I combine that strategic rigor with technical tools like Python, R, and Machine Learning. I am looking for roles where I can bridge the gap between technical data teams and executive strategy.
+                </p>
+            </div>
+            <div>
+                <div class="section-title">Education</div>
+                <div class="exp-item" style="padding: 15px; border-left: 3px solid var(--secondary);">
+                    <div class="exp-role">MS in Business Analytics</div>
+                    <div class="exp-company">University of Maryland</div>
+                    <div class="exp-date">Expected Dec 2026</div>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">President, Business Analytics Association<br>Student Ambassador</p>
+                </div>
+                <div class="exp-item" style="padding: 15px; border-left: 3px solid #ddd;">
+                    <div class="exp-role">BBA</div>
+                    <div class="exp-company">GGS Indraprastha University</div>
+                    <div class="exp-date">2019 - 2022</div>
+                </div>
+            </div>
         </div>
-        <div class="timeline-item">
-            <div class="role">Bachelor of Business Administration</div>
-            <span class="company">Guru Gobind Singh Indraprastha University</span>
-            <span class="date">08/2019 - 06/2022 • GPA: 3.52</span>
-        </div>
-    </section>
-
-    <section id="achievements">
-        <h2>Achievements</h2>
-        
-        <div class="timeline-item">
-            <div class="role">Quarterly Rising Accelerator Award</div>
-            <span class="company">Protiviti</span>
-            <p>Recognized in the top 5% of 3,500+ consultants for exceptional project delivery.</p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">Terrapin Scholar</div>
-            <span class="company">University of Maryland</span>
-            <p>Received a merit-based scholarship from the University of Maryland for excellent academic and professional records.</p>
-        </div>
-    </section>
-
-    <section id="volunteering">
-        <h2>Volunteering</h2>
-
-        <div class="timeline-item">
-            <div class="role">President</div>
-            <span class="company">Smith Masters Business Analytics Association</span>
-            <p>Elected as the President for the Business Analytics cohort. Engaging with the MPO to ensure a professionally enriching and enjoyable experience for all MSBA Students.</p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">Student Ambassador - Professional Development</div>
-            <span class="company">Robert H. Smith School of Business</span>
-            <p>Organized and facilitated workshops to help students in the Robert H. Smith School of Business develop key soft and hard skills.</p>
-        </div>
-    </section>
-
-    <section id="certifications">
-        <h2>Certifications</h2>
-        
-        <div class="timeline-item">
-            <div class="role">Programming in Python</div>
-            <span class="company">E&ICT Academy, IIT Guwahati</span>
-            <span class="date">Live Course • <a href="https://certificate.codingninjas.com/view/446ad9cdcfca7e05" target="_blank" style="color: var(--primary-color); text-decoration: none;">View Certificate</a></span>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">SQL for Data Analysis</div>
-            <span class="company">E&ICT Academy, IIT Guwahati</span>
-            <span class="date">Live Course • <a href="https://certificate.codingninjas.com/view/1ab989f839e5c7b2" target="_blank" style="color: var(--primary-color); text-decoration: none;">View Certificate</a></span>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">Data Visualization with PowerBI</div>
-            <span class="company">E&ICT Academy, IIT Guwahati</span>
-            <span class="date">Live Course • <a href="https://certificate.codingninjas.com/view/ad980ef6b705f22c" target="_blank" style="color: var(--primary-color); text-decoration: none;">View Certificate</a></span>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">Introduction to Analytics & Excel</div>
-            <span class="company">E&ICT Academy, IIT Guwahati</span>
-            <span class="date">Live Course • <a href="https://certificate.codingninjas.com/view/06dae57b56ce5b34" target="_blank" style="color: var(--primary-color); text-decoration: none;">View Certificate</a></span>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-tag">Project Management</div>
-            <div class="skill-tag">Enterprise Risk Management</div>
-            <div class="skill-tag">Microsoft Excel</div>
-            <div class="skill-tag">FCPA & SOX Compliance</div>
-            <div class="skill-tag">Risk & Compliance Management</div>
-            <div class="skill-tag">Power BI</div>
-            <div class="skill-tag">Azure DevOps</div>
-            <div class="skill-tag">SQL</div>
-            <div class="skill-tag">Business Analysis</div>
-            <div class="skill-tag">Python</div>
-            <div class="skill-tag">R</div>
-            <div class="skill-tag">Tableau</div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        
-        <div class="timeline-item">
-            <div class="role">CAVA Growth Strategy: Mediterranean Fast-Casual Expansion</div>
-            <span class="date">Academic Project</span>
-            <ul>
-                <li>Developed a 3–5 year national growth strategy for CAVA, identifying high-potential Texas and Florida markets by analyzing demographic density with HHI 11–24% above state medians.</li>
-                <li>Conducted competitive benchmarking against Chipotle and Sweetgreen, positioning CAVA's value-for-money offering as a key driver for customer acquisition.</li>
-                <li>Designed a "Sustainable Moat" strategy leveraging vertical integration and centralized production, enabling 14% underpricing versus industry inflation while preserving margins.</li>
-            </ul>
-            <a href="https://github.com/kunalrc33xx/cava-growth-strategy" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">View Strategic Analysis</a>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">Market Research & Operational Analysis</div>
-            <span class="company">Ucliq (B2B E-commerce)</span>
-            <span class="date">Internship Project</span>
-            <ul>
-                <li>Conducted market research (N=50) to analyze supply chain bottlenecks for a B2B meat marketplace in Delhi/NCR.</li>
-                <li>Identified a critical quality control issue, finding that 18% of dissatisfaction stemmed from excessive preservative usage (Potassium Nitrite), leading to procurement policy changes.</li>
-                <li>Uncovered operational inefficiencies where 60% of clients reported inconsistent delivery times, driving recommendations for logistics standardization.</li>
-                <li>Validated the strategic need for a mobile app, as analysis showed 40% of the target market was still offline but ready to digitize.</li>
-            </ul>
-            <a href="https://github.com/kunalrc33xx/ucliq-market-analysis" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">View Analysis & Code</a>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">Predicting Obesity Levels with Machine Learning</div>
-            <span class="date">Data Science Project</span>
-            <ul>
-                <li>Developed a multi-class classification model using Random Forest to predict obesity levels based on lifestyle and demographic data from 2,000+ individuals.</li>
-                <li>Utilized K-Means Clustering to identify natural patient segments, revealing that transportation habits and family history are top risk factors.</li>
-                <li>Conducted end-to-end data processing in Python (Pandas, Scikit-Learn), including feature engineering and One-Hot Encoding for categorical variables.</li>
-            </ul>
-            <a href="https://github.com/kunalrc33xx/obesity-level-prediction-ml" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">View Code & Analysis</a>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">Sleep & Performance Analytics</div>
-            <span class="date">Academic Research (BUDT730)</span>
-            <ul>
-                <li>Analyzed student lifestyle data using R and Excel to determine the impact of sleep on academic performance (CGPA).</li>
-                <li>Built a Linear Regression Model proving that 'Academic Pressure' is a stronger (negative) predictor of grades than sleep duration.</li>
-                <li>Identified the "7-8 Hour Sweet Spot" for optimal performance and quantified a 66% increase in depression risk associated with high academic pressure.</li>
-            </ul>
-            <a href="https://github.com/kunalrc33xx/student-sleep-stress-analytics" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">View Research</a>
-        </div>
-
-        <div class="timeline-item">
-            <div class="role">Retail Supply Chain Optimization</div>
-            <span class="date">Operations Research Project</span>
-            <ul>
-                <li>Solved a complex supply chain expansion problem using a Decomposition-Based Optimization Framework to maximize daily profit.</li>
-                <li>Implemented Linear Programming (AMPL/Gurobi) for warehouse selection and pricing, and Heuristic Algorithms for vehicle routing.</li>
-                <li>Achieved a daily profit of $56,811, exceeding the project baseline by over 10%, with results validated via a custom feasibility checker.</li>
-            </ul>
-            <a href="https://github.com/kunalrc33xx/retail-supply-chain-optimization" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">View Optimization Code</a>
-        </div>
-
     </section>
 
     <footer>
-        <p>&copy; 2026 Kunal Roy Chowdhury. Built with GitHub Pages.</p>
+        <p>&copy; 2026 Kunal Roy Chowdhury. <br>
+        <a href="https://github.com/kunalrc33xx" target="_blank" style="color: #555;">GitHub</a> | 
+        <a href="https://linkedin.com/in/kunal-roy-chowdhury" target="_blank" style="color: #555;">LinkedIn</a>
+        </p>
     </footer>
 
 </body>
