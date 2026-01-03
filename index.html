@@ -9,16 +9,17 @@
     :root {
         --primary: #2563eb;
         --secondary: #1e40af;
-        --dark: #1f2937;
-        --light: #f3f4f6;
+        --dark: #111827;
+        --text: #374151;
+        --light: #f9fafb;
         --white: #ffffff;
         --accent: #eff6ff;
     }
 
     body {
-        font-family: 'Inter', 'Segoe UI', sans-serif;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
         line-height: 1.6;
-        color: var(--dark);
+        color: var(--text);
         margin: 0;
         padding: 0;
         background-color: var(--white);
@@ -28,7 +29,7 @@
     nav {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         position: fixed;
         width: 100%;
         top: 0;
@@ -44,43 +45,43 @@
         align-items: center;
     }
 
-    .logo { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
-    .nav-links { display: flex; gap: 25px; }
-    .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+    .logo { font-size: 1.25rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
     .nav-links a:hover { color: var(--primary); }
 
-    /* Hero Section - The "Hook" */
+    /* Hero Section */
     header {
-        max-width: 900px;
-        margin: 120px auto 60px;
+        max-width: 800px;
+        margin: 140px auto 80px;
         padding: 0 20px;
         text-align: center;
     }
 
     .profile-img {
-        width: 140px;
-        height: 140px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         object-fit: cover;
         border: 4px solid var(--white);
-        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
-        margin-bottom: 25px;
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        margin-bottom: 30px;
     }
 
-    h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: -0.02em; line-height: 1.1; }
+    h1 { font-size: 3.5rem; margin-bottom: 15px; letter-spacing: -0.03em; line-height: 1.1; color: var(--dark); }
     
     .tagline {
         font-size: 1.5rem;
         color: var(--primary);
         font-weight: 600;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     .hook {
         font-size: 1.2rem;
         color: #555;
         max-width: 700px;
-        margin: 0 auto 30px;
+        margin: 0 auto 35px;
         line-height: 1.6;
     }
 
@@ -88,112 +89,155 @@
         display: inline-block;
         background: var(--primary);
         color: white;
-        padding: 12px 25px;
-        border-radius: 50px;
+        padding: 14px 30px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
-        transition: transform 0.2s, background 0.2s;
-        margin: 5px;
+        transition: all 0.2s;
+        margin: 0 8px;
+        box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
     }
-    .btn:hover { background: var(--secondary); transform: translateY(-2px); }
-    .btn-outline { background: white; color: var(--primary); border: 2px solid var(--primary); }
-    .btn-outline:hover { background: var(--accent); }
+    .btn:hover { background: var(--secondary); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3); }
+    .btn-outline { background: white; color: var(--primary); border: 2px solid var(--primary); box-shadow: none; }
+    .btn-outline:hover { background: var(--accent); transform: translateY(-2px); }
 
-    /* General Layout */
-    section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+    /* Sections */
+    section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
     .section-title { 
-        font-size: 1.8rem; 
-        font-weight: 700; 
-        margin-bottom: 40px; 
-        border-left: 5px solid var(--primary);
-        padding-left: 15px;
+        font-size: 2rem; 
+        font-weight: 800; 
+        margin-bottom: 50px; 
+        color: var(--dark);
+        position: relative;
+        display: inline-block;
+    }
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--primary);
+        margin-top: 10px;
+        border-radius: 2px;
     }
 
     /* PROJECTS - Visual Cards */
     .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 35px;
     }
 
     .project-card {
         background: white;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 25px;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        overflow: hidden;
         transition: transform 0.3s, box-shadow 0.3s;
-        position: relative;
         display: flex;
         flex-direction: column;
     }
 
     .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         border-color: var(--primary);
     }
 
-    .project-icon {
-        font-size: 2rem;
-        color: var(--primary);
-        margin-bottom: 15px;
+    /* Image Thumbnail Container */
+    .project-thumb {
+        height: 180px;
+        background-color: #f3f4f6;
+        overflow: hidden;
+        position: relative;
     }
 
-    .project-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
-    .project-desc { font-size: 0.95rem; color: #666; margin-bottom: 20px; flex-grow: 1; }
+    .project-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .project-card:hover .project-thumb img { transform: scale(1.05); }
+
+    .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
     
-    .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .project-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 12px; color: var(--dark); }
+    
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
     .tech-tag {
         background: var(--accent);
         color: var(--secondary);
         font-size: 0.75rem;
         padding: 4px 10px;
-        border-radius: 4px;
+        border-radius: 20px;
         font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
+
+    .project-desc { font-size: 0.95rem; color: #666; margin-bottom: 25px; flex-grow: 1; }
 
     .project-link {
         text-decoration: none;
         color: var(--primary);
-        font-weight: 600;
-        font-size: 0.9rem;
-        display: flex;
+        font-weight: 700;
+        font-size: 0.95rem;
+        display: inline-flex;
         align-items: center;
-        gap: 5px;
+        gap: 8px;
     }
     .project-link:hover { text-decoration: underline; }
 
-    /* EXPERIENCE - Clean Timeline */
-    .exp-item {
-        background: var(--light);
-        padding: 25px;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        border-left: 4px solid #ccc;
-    }
-    .exp-item.featured { border-left-color: var(--primary); background: white; border: 1px solid #e5e7eb; border-left: 5px solid var(--primary); }
-    
-    .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 10px; }
-    .exp-role { font-weight: 700; font-size: 1.1rem; }
-    .exp-company { color: var(--primary); font-weight: 600; }
-    .exp-date { font-size: 0.9rem; color: #777; }
-    
-    .early-career { font-size: 0.9rem; color: #666; margin-top: 30px; }
-    .early-career h3 { font-size: 1.1rem; margin-bottom: 10px; }
-
-    /* SKILLS - Categorized */
-    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
-    .skill-category h3 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+    /* SKILLS */
+    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
+    .skill-category h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 20px; font-weight: 700; }
     .skill-list { list-style: none; padding: 0; }
-    .skill-list li { margin-bottom: 8px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
-    .skill-list i { color: var(--primary); font-size: 0.8rem; }
+    .skill-list li { margin-bottom: 12px; font-size: 1rem; display: flex; align-items: center; gap: 10px; color: #555; }
+    .skill-list i { color: var(--primary); font-size: 0.9rem; width: 20px; }
 
-    /* ABOUT - Narrative */
-    .about-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-    @media(min-width: 768px) { .about-grid { grid-template-columns: 2fr 1fr; } }
+    /* EXPERIENCE */
+    .timeline { border-left: 3px solid #e5e7eb; margin-left: 10px; padding-left: 30px; }
+    .exp-item { position: relative; margin-bottom: 50px; }
+    .exp-item::before {
+        content: '';
+        position: absolute;
+        left: -38px;
+        top: 5px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 4px solid white;
+        box-shadow: 0 0 0 1px #e5e7eb;
+    }
+    
+    .exp-role { font-size: 1.2rem; font-weight: 700; color: var(--dark); }
+    .exp-company { font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 5px; }
+    .exp-date { font-size: 0.9rem; color: #888; margin-bottom: 15px; display: block; font-weight: 500; }
+    .exp-item ul { padding-left: 20px; color: #555; }
+    .exp-item li { margin-bottom: 10px; }
 
-    /* Footer */
-    footer { text-align: center; padding: 40px; color: #777; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 60px; }
+    /* CTA Section */
+    .cta-section {
+        background: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+        border-radius: 20px;
+        margin: 0 20px 60px;
+    }
+    .cta-section h2 { margin-bottom: 20px; font-size: 2rem; color: white; }
+    .cta-section p { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
+    .btn-white { background: white; color: var(--primary); }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-2px); }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 50px; }
+    @media(min-width: 768px) { .about-grid { grid-template-columns: 1.5fr 1fr; } }
+
+    footer { text-align: center; padding: 50px 20px; color: #888; font-size: 0.9rem; border-top: 1px solid #eee; }
 
 </style>
 </head>
@@ -217,7 +261,7 @@
         <div class="tagline">Business Analyst & Data Strategist</div>
         <p class="hook">
             Former Risk Consultant turning messy data into strategic decisions. 
-            <br>Bridging the gap between corporate strategy and advanced analytics.
+            <br>Leveraging Fortune 10 risk experience to build ML models that predict outcomes, not just report them.
         </p>
         <div>
             <a href="#projects" class="btn">View My Work</a>
@@ -230,143 +274,154 @@
         <div class="projects-grid">
             
             <div class="project-card">
-                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                <div class="project-title">CAVA Growth Strategy</div>
-                <div class="tech-stack">
-                    <span class="tech-tag">Corporate Strategy</span>
-                    <span class="tech-tag">Market Analysis</span>
-                    <span class="tech-tag">Excel</span>
+                <div class="project-thumb">
+                    <img src="cava_thumb.jpg" alt="CAVA Strategy Slide" onerror="this.src='https://placehold.co/600x400/e2e8f0/2563eb?text=CAVA+Strategy+Deck'">
                 </div>
-                <div class="project-desc">
-                    Designed a "Sustainable Moat" strategy leveraging vertical integration to enable 14% underpricing vs. competitors. Developed a market selection model targeting high-HHI regions in Texas & Florida.
+                <div class="card-body">
+                    <div class="project-title">CAVA Growth Strategy</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Excel</span>
+                        <span class="tech-tag">PowerPoint</span>
+                    </div>
+                    <div class="project-desc">
+                        Designed a "Sustainable Moat" strategy leveraging vertical integration to enable 14% underpricing vs. competitors. Developed a market selection model targeting high-HHI regions in Texas & Florida.
+                    </div>
+                    <a href="https://github.com/kunalrc33xx/cava-growth-strategy" target="_blank" class="project-link">View Strategy Deck <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <a href="https://github.com/kunalrc33xx/cava-growth-strategy" target="_blank" class="project-link">View Strategy Deck <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="project-card">
-                <div class="project-icon"><i class="fas fa-brain"></i></div>
-                <div class="project-title">Predicting Health Risks (ML)</div>
-                <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Random Forest</span>
-                    <span class="tech-tag">K-Means</span>
+                <div class="project-thumb">
+                    <img src="obesity_thumb.png" alt="ML Confusion Matrix" onerror="this.src='https://placehold.co/600x400/e2e8f0/2563eb?text=Machine+Learning+Model'">
                 </div>
-                <div class="project-desc">
-                    Built a multi-class classification model to predict obesity levels with high accuracy. Used unsupervised clustering to identify family history and transportation as primary risk factors.
+                <div class="card-body">
+                    <div class="project-title">Predicting Health Risks (ML)</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-Learn</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                    <div class="project-desc">
+                        Built a Random Forest classification model to predict obesity levels with high accuracy. Used unsupervised K-Means clustering to identify family history and transportation as primary risk factors.
+                    </div>
+                    <a href="https://github.com/kunalrc33xx/obesity-level-prediction-ml" target="_blank" class="project-link">View Code & Model <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <a href="https://github.com/kunalrc33xx/obesity-level-prediction-ml" target="_blank" class="project-link">View Code & Model <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="project-card">
-                <div class="project-icon"><i class="fas fa-truck-moving"></i></div>
-                <div class="project-title">Supply Chain Optimization</div>
-                <div class="tech-stack">
-                    <span class="tech-tag">AMPL</span>
-                    <span class="tech-tag">Gurobi</span>
-                    <span class="tech-tag">Python</span>
+                <div class="project-thumb">
+                    <img src="supply_thumb.png" alt="Optimization Route" onerror="this.src='https://placehold.co/600x400/e2e8f0/2563eb?text=Supply+Chain+Optimization'">
                 </div>
-                <div class="project-desc">
-                    Solved a complex logistics problem using Linear Programming. Optimized warehouse selection and routing to achieve $56,811 daily profit, beating the baseline by 10%.
+                <div class="card-body">
+                    <div class="project-title">Supply Chain Optimization</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AMPL</span>
+                        <span class="tech-tag">Gurobi</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-desc">
+                        Solved a complex logistics problem using Linear Programming decomposition. Optimized warehouse selection and routing to achieve $56,811 daily profit, beating the baseline by 10%.
+                    </div>
+                    <a href="https://github.com/kunalrc33xx/retail-supply-chain-optimization" target="_blank" class="project-link">View Optimization <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <a href="https://github.com/kunalrc33xx/retail-supply-chain-optimization" target="_blank" class="project-link">View Optimization <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="project-card">
-                <div class="project-icon"><i class="fas fa-bed"></i></div>
-                <div class="project-title">Student Performance Analytics</div>
-                <div class="tech-stack">
-                    <span class="tech-tag">R Studio</span>
-                    <span class="tech-tag">Linear Regression</span>
-                    <span class="tech-tag">Statistics</span>
+                <div class="project-thumb">
+                    <img src="sleep_thumb.png" alt="Regression Chart" onerror="this.src='https://placehold.co/600x400/e2e8f0/2563eb?text=Statistical+Analysis'">
                 </div>
-                <div class="project-desc">
-                    Proved via regression analysis that "Academic Pressure" outweighs sleep duration as a grade predictor. Quantified a 66% increase in depression risk for high-pressure segments.
+                <div class="card-body">
+                    <div class="project-title">Student Performance Analytics</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">R Studio</span>
+                        <span class="tech-tag">Excel</span>
+                    </div>
+                    <div class="project-desc">
+                        Proved via regression analysis that "Academic Pressure" outweighs sleep duration as a grade predictor. Quantified a 66% increase in depression risk for high-pressure segments.
+                    </div>
+                    <a href="https://github.com/kunalrc33xx/student-sleep-stress-analytics" target="_blank" class="project-link">View Analysis <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <a href="https://github.com/kunalrc33xx/student-sleep-stress-analytics" target="_blank" class="project-link">View Analysis <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="project-card">
-                <div class="project-icon"><i class="fas fa-search-dollar"></i></div>
-                <div class="project-title">B2B Operational Analysis</div>
-                <div class="tech-stack">
-                    <span class="tech-tag">Market Research</span>
-                    <span class="tech-tag">Supply Chain Audit</span>
+                <div class="project-thumb">
+                    <img src="ucliq_thumb.png" alt="Survey Data Viz" onerror="this.src='https://placehold.co/600x400/e2e8f0/2563eb?text=Market+Research+Viz'">
                 </div>
-                <div class="project-desc">
-                    Uncovered a critical quality control issue (preservative levels) causing 18% of customer churn. Validated the roadmap for digital transformation based on offline user behavior.
+                <div class="card-body">
+                    <div class="project-title">B2B Operational Analysis</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Excel</span>
+                        <span class="tech-tag">Data Viz</span>
+                    </div>
+                    <div class="project-desc">
+                        Uncovered a critical quality control issue (preservative levels) causing 18% of customer churn. Validated the roadmap for digital transformation based on offline user behavior.
+                    </div>
+                    <a href="https://github.com/kunalrc33xx/ucliq-market-analysis" target="_blank" class="project-link">View Insights <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <a href="https://github.com/kunalrc33xx/ucliq-market-analysis" target="_blank" class="project-link">View Insights <i class="fas fa-arrow-right"></i></a>
             </div>
 
         </div>
     </section>
 
-    <section id="skills" style="background: #fafafa; border-radius: 12px;">
+    <section id="skills" style="background: #fafafa;">
         <div class="section-title">Technical Arsenal</div>
         <div class="skills-container">
             <div class="skill-category">
                 <h3>Data Analysis & ML</h3>
                 <ul class="skill-list">
-                    <li><i class="fas fa-check"></i> Python (Pandas, Scikit-Learn)</li>
-                    <li><i class="fas fa-check"></i> R Studio (Regression, Stats)</li>
-                    <li><i class="fas fa-check"></i> SQL (Data Querying)</li>
-                    <li><i class="fas fa-check"></i> Machine Learning Algorithms</li>
+                    <li><i class="fas fa-code"></i> Python (Pandas, Scikit-Learn)</li>
+                    <li><i class="fas fa-chart-bar"></i> R Studio (Regression, Stats)</li>
+                    <li><i class="fas fa-database"></i> SQL (Data Querying)</li>
+                    <li><i class="fas fa-robot"></i> Machine Learning Algorithms</li>
                 </ul>
             </div>
             <div class="skill-category">
                 <h3>Business Strategy</h3>
                 <ul class="skill-list">
-                    <li><i class="fas fa-check"></i> Enterprise Risk Management</li>
-                    <li><i class="fas fa-check"></i> Process Optimization</li>
-                    <li><i class="fas fa-check"></i> FCPA & SOX Compliance</li>
-                    <li><i class="fas fa-check"></i> Market Research</li>
+                    <li><i class="fas fa-chess"></i> Enterprise Risk Management</li>
+                    <li><i class="fas fa-sync"></i> Process Optimization</li>
+                    <li><i class="fas fa-shield-alt"></i> FCPA & SOX Compliance</li>
+                    <li><i class="fas fa-search"></i> Market Research</li>
                 </ul>
             </div>
             <div class="skill-category">
                 <h3>Tools & Visualization</h3>
                 <ul class="skill-list">
-                    <li><i class="fas fa-check"></i> Tableau & Power BI</li>
-                    <li><i class="fas fa-check"></i> Azure DevOps</li>
-                    <li><i class="fas fa-check"></i> Advanced Excel</li>
-                    <li><i class="fas fa-check"></i> AMPL / Gurobi</li>
+                    <li><i class="fas fa-chart-pie"></i> Tableau & Power BI</li>
+                    <li><i class="fas fa-tasks"></i> Azure DevOps</li>
+                    <li><i class="fas fa-table"></i> Advanced Excel</li>
+                    <li><i class="fas fa-calculator"></i> AMPL / Gurobi</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="experience">
-        <div class="section-title">Experience</div>
-        
-        <div class="exp-item featured">
-            <div class="exp-header">
+        <div class="section-title">Professional Experience</div>
+        <div class="timeline">
+            
+            <div class="exp-item">
                 <div class="exp-role">Consultant (Risk & Compliance)</div>
                 <div class="exp-company">Protiviti</div>
-                <div class="exp-date">01/2025 - 06/2025</div>
+                <span class="exp-date">01/2025 - 06/2025</span>
+                <ul>
+                    <li><strong>Strategic ERM Frameworks:</strong> Collaborated with a team of eight to develop and refine Enterprise Risk Management frameworks, integrating risk mitigation directly into client strategic planning.</li>
+                    <li><strong>Tech-Driven Efficiency:</strong> Developed and optimized a project tracking tool using Azure DevOps, which enhanced transparency and accountability across multiple engagements.</li>
+                    <li><strong>Impactful Gap Analysis:</strong> Identified 30+ design gaps and assisted the client in resolving 15+ regulatory compliance gaps, contributing to a 30% improvement in control effectiveness.</li>
+                </ul>
             </div>
-            <ul>
-                <li><strong>Strategic ERM Frameworks:</strong> Collaborated with a team of eight to develop and refine Enterprise Risk Management frameworks, directly integrating risk mitigation into client strategic planning.</li>
-                <li><strong>Tech-Driven Efficiency:</strong> Developed and optimized a project tracking tool using Azure DevOps, which enhanced transparency and accountability across multiple engagements.</li>
-                <li><strong>Impactful Gap Analysis:</strong> Identified 30+ design gaps and assisted the client in resolving 15+ regulatory compliance gaps, contributing to a 30% improvement in control effectiveness.</li>
-            </ul>
-        </div>
 
-        <div class="exp-item featured" style="margin-top: -10px; border-top-left-radius: 0; border-top-right-radius: 0; border-top: none;">
-            <div class="exp-header">
+            <div class="exp-item">
                 <div class="exp-role">Junior Consultant</div>
                 <div class="exp-company">Protiviti</div>
-                <div class="exp-date">09/2023 - 12/2024</div>
+                <span class="exp-date">09/2023 - 12/2024</span>
+                <ul>
+                    <li><strong>Large-Scale Control Testing:</strong> Led end-to-end design and operational testing of 70+ internal controls for a Fortune 10 tech company, ensuring FCPA and SOX compliance.</li>
+                    <li><strong>Project Leadership:</strong> Spearheaded 10+ international projects focused on process optimization, coordinating cross-functional stakeholders to achieve a 97% on-time completion rate.</li>
+                    <li><strong>Audit Delivery:</strong> Delivered comprehensive audit reports to senior management, identifying corrective actions that uncovered potential future revenue opportunities.</li>
+                </ul>
             </div>
-            <ul>
-                <li><strong>Large-Scale Control Testing:</strong> Led end-to-end design and operational testing of 70+ internal controls for a Fortune 10 tech company, ensuring FCPA and SOX compliance.</li>
-                <li><strong>Project Leadership:</strong> Spearheaded 10+ international projects focused on process optimization, coordinating cross-functional stakeholders to achieve a 97% on-time completion rate.</li>
-                <li><strong>Audit Delivery:</strong> Delivered comprehensive audit reports to senior management, identifying corrective actions that uncovered potential future revenue opportunities.</li>
-            </ul>
-        </div>
 
-        <div class="early-career">
-            <h3>Early Career</h3>
-            <p><strong>BSES Delhi (2022):</strong> Capitalization Intern - Analyzed government project costs and forecasted expenses.</p>
-            <p><strong>SSP (2021):</strong> Project Intern - Optimized resource allocation to reduce project costs by 15%.</p>
         </div>
     </section>
 
@@ -378,7 +433,7 @@
                     I don't just analyze data; I translate it into business value. 
                 </p>
                 <p>
-                    My career started in <strong>Risk Consulting at Protiviti</strong>, where I learned how businesses break—analyzing gaps in processes, compliance, and strategy for Fortune 10 clients. While I loved the problem-solving, I realized the future of decision-making wasn't just in audits, but in **predictive analytics**.
+                    My career started in <strong>Risk Consulting at Protiviti</strong>, where I learned how businesses break—analyzing gaps in processes, compliance, and strategy for Fortune 10 clients. While I loved the problem-solving, I realized the future of decision-making wasn't just in audits, but in <strong>predictive analytics</strong>.
                 </p>
                 <p>
                     Now, pursuing my <strong>MS in Business Analytics at UMD</strong>, I combine that strategic rigor with technical tools like Python, R, and Machine Learning. I am looking for roles where I can bridge the gap between technical data teams and executive strategy.
@@ -386,26 +441,38 @@
             </div>
             <div>
                 <div class="section-title">Education</div>
-                <div class="exp-item" style="padding: 15px; border-left: 3px solid var(--secondary);">
-                    <div class="exp-role">MS in Business Analytics</div>
-                    <div class="exp-company">University of Maryland</div>
-                    <div class="exp-date">Expected Dec 2026</div>
-                    <p style="font-size: 0.85rem; margin-top: 5px;">President, Business Analytics Association<br>Student Ambassador</p>
+                <div style="margin-bottom: 25px;">
+                    <div style="font-weight: 700; font-size: 1.1rem;">MS in Business Analytics</div>
+                    <div style="color: var(--primary); font-weight: 600;">University of Maryland</div>
+                    <div style="color: #888; font-size: 0.9rem;">Expected Dec 2026</div>
+                    <ul style="margin-top: 5px; padding-left: 20px; font-size: 0.9rem; color: #555;">
+                        <li>President, Business Analytics Association</li>
+                        <li>Student Ambassador, Professional Development</li>
+                    </ul>
                 </div>
-                <div class="exp-item" style="padding: 15px; border-left: 3px solid #ddd;">
-                    <div class="exp-role">BBA</div>
-                    <div class="exp-company">GGS Indraprastha University</div>
-                    <div class="exp-date">2019 - 2022</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.1rem;">BBA</div>
+                    <div style="color: var(--primary); font-weight: 600;">GGS Indraprastha University</div>
+                    <div style="color: #888; font-size: 0.9rem;">2019 - 2022</div>
+                    <div style="font-size: 0.9rem; color: #555; margin-top: 5px;">GPA: 3.52</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="cta-section">
+        <h2>Ready to build data-driven strategies?</h2>
+        <p>I am currently open to internship opportunities in Data Analytics and Strategy for Summer 2026.</p>
+        <a href="mailto:kunalrc33@gmail.com" class="btn btn-white"><i class="fas fa-envelope"></i> Email Me</a>
+        <a href="Kunal_R_Chowdhury_Resume.pdf" target="_blank" class="btn btn-white" style="margin-left: 10px;"><i class="fas fa-file-alt"></i> Download Resume</a>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Kunal Roy Chowdhury. <br>
-        <a href="https://github.com/kunalrc33xx" target="_blank" style="color: #555;">GitHub</a> | 
-        <a href="https://linkedin.com/in/kunal-roy-chowdhury" target="_blank" style="color: #555;">LinkedIn</a>
-        </p>
+        <p>&copy; 2026 Kunal Roy Chowdhury. Built with GitHub Pages.</p>
+        <div style="margin-top: 10px;">
+            <a href="https://github.com/kunalrc33xx" target="_blank" style="color: #888; margin: 0 10px; text-decoration: none;">GitHub</a>
+            <a href="https://linkedin.com/in/kunal-roy-chowdhury" target="_blank" style="color: #888; margin: 0 10px; text-decoration: none;">LinkedIn</a>
+        </div>
     </footer>
 
 </body>
