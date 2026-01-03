@@ -32,27 +32,41 @@
     }
 
     .nav-container {
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 1rem 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
     }
 
     .logo { 
         font-size: 1.2rem; 
         font-weight: bold; 
         color: var(--primary-color); 
+        margin-right: 20px;
     }
     
-    .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-color); font-weight: 500; }
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a { 
+        text-decoration: none; 
+        color: var(--text-color); 
+        font-weight: 500; 
+        font-size: 0.9rem;
+    }
+    
     .nav-links a:hover { color: var(--primary-color); }
 
     /* Hero Section */
     header {
         background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        padding: 120px 20px 60px;
+        padding: 140px 20px 60px;
         text-align: center;
     }
 
@@ -137,6 +151,8 @@
                 <a href="#experience">Experience</a>
                 <a href="#education">Education</a>
                 <a href="#achievements">Achievements</a>
+                <a href="#volunteering">Volunteering</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
             </div>
@@ -240,13 +256,55 @@
         <div class="timeline-item">
             <div class="role">Quarterly Rising Accelerator Award</div>
             <span class="company">Protiviti</span>
-            <p>Recognized in the top 5% of 3,500+ consultants for exceptional project delivery.</p>
+            [cite_start]<p>Recognized in the top 5% of 3,500+ consultants for exceptional project delivery[cite: 58].</p>
         </div>
 
         <div class="timeline-item">
             <div class="role">Terrapin Scholar</div>
             <span class="company">University of Maryland</span>
             <p>Received a merit-based scholarship from the University of Maryland for excellent academic and professional records.</p>
+        </div>
+    </section>
+
+    <section id="volunteering">
+        <h2>Volunteering</h2>
+
+        <div class="timeline-item">
+            <div class="role">President</div>
+            <span class="company">Smith Masters Business Analytics Association</span>
+            <p>Elected as the President for the Business Analytics cohort. Engaging with the MPO to ensure a professionally enriching and enjoyable experience for all MSBA Students.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="role">Student Ambassador - Professional Development</div>
+            <span class="company">Robert H. Smith School of Business</span>
+            [cite_start]<p>Organized and facilitated workshops to help students in the Robert H. Smith School of Business develop key soft and hard skills[cite: 79].</p>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        
+        <div class="timeline-item">
+            <div class="role">Programming in Python</div>
+            <span class="company">E&ICT Academy, IIT Guwahati</span>
+        </div>
+
+        <div class="timeline-item">
+            <div class="role">SQL for Data Analysis</div>
+            <span class="company">E&ICT Academy, IIT Guwahati</span>
+        </div>
+
+        <div class="timeline-item">
+            <div class="role">Data Visualization with PowerBI</div>
+            <span class="company">E&ICT Academy, IIT Guwahati</span>
+            <span class="date">Live Course</span>
+        </div>
+
+        <div class="timeline-item">
+            <div class="role">Introduction to Analytics & Excel</div>
+            <span class="company">E&ICT Academy, IIT Guwahati</span>
+            <span class="date">Live Course</span>
         </div>
     </section>
 
@@ -286,10 +344,10 @@
             <span class="company">Ucliq</span>
             <span class="date">Internship Project</span>
             <ul>
-                <li>Individual project while working as an Intern at Ucliq. The Primary goal was to explore the popularity of fresh online meat supply services, identify improvement areas, recommend solutions to simplify the selling process.</li>
-                <li>Delivery expectations included practical business recommendations and insights to enhance the organization’s marketing process.</li>
-                <li>Methodology included Descriptive research, experimental methods, survey research, and convenience sampling.</li>
-                <li>After conducting an in-depth analysis of customer preferences, the project resulted in actionable insights that influenced operational expansion and improved customer satisfaction.</li>
+                <li>Individual project while working as an Intern at Ucliq. [cite_start]The Primary goal was to explore the popularity of fresh online meat supply services, identify improvement areas, recommend solutions to simplify the selling process[cite: 53].</li>
+                [cite_start]<li>Delivery expectations included practical business recommendations and insights to enhance the organization’s marketing process[cite: 54].</li>
+                [cite_start]<li>Methodology included Descriptive research, experimental methods, survey research, and convenience sampling[cite: 55].</li>
+                [cite_start]<li>After conducting an in-depth analysis of customer preferences, the project resulted in actionable insights that influenced operational expansion and improved customer satisfaction[cite: 56].</li>
             </ul>
         </div>
 
