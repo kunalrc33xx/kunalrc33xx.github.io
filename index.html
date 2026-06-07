@@ -77,7 +77,6 @@
   .skill-list li { display: flex; align-items: center; gap: 10px; font-size: 0.93rem; color: var(--muted); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
   .skill-list li:last-child { border-bottom: none; }
   .skill-list i { color: var(--accent); width: 16px; font-size: 0.85rem; }
-  /* EXPERIENCE */
   .exp-wrapper { max-width: 760px; }
   .exp-item { position: relative; padding-left: 28px; padding-bottom: 50px; border-left: 1px solid var(--border); }
   .exp-item:last-child { padding-bottom: 0; border-left: 1px solid transparent; }
@@ -91,14 +90,12 @@
   .exp-bullets { padding-left: 18px; }
   .exp-bullets li { color: var(--muted); font-size: 0.92rem; margin-bottom: 9px; line-height: 1.6; }
   .exp-bullets li strong { color: var(--text); }
-  /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
   @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } .projects-grid { grid-template-columns: 1fr; } .stat-item { padding: 0 24px; } }
   .about-text p { color: var(--muted); font-size: 0.97rem; line-height: 1.75; margin-bottom: 16px; }
   .about-text p strong { color: var(--text); }
   .about-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
   .about-pill { background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); color: var(--accent2); font-size: 0.78rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; letter-spacing: 0.3px; }
-  /* EDUCATION */
   .edu-item { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: border-color 0.3s; }
   .edu-item:hover { border-color: rgba(99,102,241,0.3); }
   .edu-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
@@ -108,7 +105,6 @@
   .edu-notes { list-style: none; padding: 0; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
   .edu-notes li { font-size: 0.83rem; color: var(--muted); margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
   .edu-notes li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent2); flex-shrink: 0; }
-  /* CTA */
   .cta-section { position: relative; z-index: 1; margin: 0 24px 80px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 80px 40px; text-align: center; overflow: hidden; }
   .cta-section::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(99,102,241,0.12) 0%, transparent 70%); pointer-events: none; }
   .cta-section h2 { font-size: 2rem; font-weight: 800; color: var(--white); margin-bottom: 14px; letter-spacing: -0.03em; position: relative; }
@@ -250,7 +246,7 @@
 
     <div class="project-card">
       <div class="project-thumb">
-        <img src="https://placehold.co/600x400/0f0f1a/6366f1?text=Yelp+NLP+Model" alt="Yelp Review Prediction">
+        <img src="yelp_auc_curve.png" alt="Yelp Review Prediction">
       </div>
       <div class="card-body">
         <div class="project-title">Yelp Review Usefulness Prediction</div>
@@ -262,7 +258,7 @@
 
     <div class="project-card">
       <div class="project-thumb">
-        <img src="https://placehold.co/600x400/0f0f1a/6366f1?text=NYC+Taxi+Fleet" alt="NYC Taxi Fleet">
+        <img src="nyc_taxi_demand.png" alt="NYC Taxi Fleet">
       </div>
       <div class="card-body">
         <div class="project-title">NYC Taxi Fleet Positioning</div>
@@ -274,7 +270,7 @@
 
     <div class="project-card">
       <div class="project-thumb">
-        <img src="https://placehold.co/600x400/0f0f1a/E97627?text=Tableau+Story" alt="Stack Overflow Tableau">
+        <img src="so_tab3_usage_ai.png" alt="Stack Overflow Tableau">
       </div>
       <div class="card-body">
         <div class="project-title">Stack Overflow Survey, Tableau Story</div>
@@ -325,11 +321,25 @@
 
 <hr class="section-divider">
 
-<!-- EXPERIENCE -->
 <section class="section" id="experience">
   <div class="section-label">Career</div>
   <div class="section-title">Experience <span class="dim">/ History</span></div>
   <div class="exp-wrapper">
+
+    <div class="exp-item">
+      <div class="exp-dot current"></div>
+      <div class="exp-header">
+        <div class="exp-role">Technical Process Intern</div>
+        <span class="exp-badge">Current</span>
+      </div>
+      <div class="exp-company">Zochem LLC</div>
+      <span class="exp-date">June 2026 - Present</span>
+      <ul class="exp-bullets">
+        <li>Assisting with product optimization and process improvement for a leading zinc oxide manufacturer, identifying key operational weaknesses and developing data-driven recommendations to enhance production efficiency.</li>
+        <li>Analyzing manufacturing workflows and output data to surface bottlenecks and inefficiencies, translating findings into actionable strategies that strengthen how operations are run.</li>
+        <li>Collaborating with cross-functional teams to implement process changes and track performance metrics, supporting continuous improvement initiatives.</li>
+      </ul>
+    </div>
 
     <div class="exp-item">
       <div class="exp-dot current"></div>
@@ -391,7 +401,6 @@
 
 <hr class="section-divider">
 
-<!-- ABOUT + EDUCATION -->
 <section class="section" id="about">
   <div class="section-label">Background</div>
   <div class="section-title">My Journey <span class="dim">/ About</span></div>
@@ -465,4 +474,4 @@
 </footer>
 
 </body>
-  </html>
+          </html>
