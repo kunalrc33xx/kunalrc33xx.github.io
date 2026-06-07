@@ -11,7 +11,6 @@
     --bg: #080810;
     --bg2: #0f0f1a;
     --card: #12121f;
-    --card-hover: #18182c;
     --border: rgba(255,255,255,0.07);
     --border-hover: rgba(99,102,241,0.5);
     --text: #e2e2f0;
@@ -19,174 +18,35 @@
     --white: #ffffff;
     --accent: #6366f1;
     --accent2: #818cf8;
-    --accent-glow: rgba(99,102,241,0.15);
-    --gold: #f59e0b;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
-  }
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(8,8,16,0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-inner {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 24px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo { font-size: 1rem; font-weight: 700; color: var(--white); letter-spacing: -0.3px; }
+  body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+  nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(8,8,16,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+  .nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-size: 1rem; font-weight: 700; color: var(--white); }
   .logo span { color: var(--accent2); }
   .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
   .nav-links a:hover { color: var(--white); }
-  .nav-resume {
-    background: var(--accent) !important;
-    color: var(--white) !important;
-    padding: 8px 18px;
-    border-radius: 6px;
-    font-weight: 600 !important;
-    font-size: 0.85rem !important;
-  }
+  .nav-resume { background: var(--accent) !important; color: var(--white) !important; padding: 8px 18px; border-radius: 6px; font-weight: 600 !important; font-size: 0.85rem !important; }
   .nav-resume:hover { background: var(--accent2) !important; }
-  .hero {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 24px 80px;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 700px;
-    height: 500px;
-    background: radial-gradient(ellipse at center, rgba(99,102,241,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(99,102,241,0.1);
-    border: 1px solid rgba(99,102,241,0.3);
-    color: var(--accent2);
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 6px 16px;
-    border-radius: 999px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-  }
-  .hero-badge::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent2);
-    animation: pulse 2s infinite;
-  }
+  .hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; }
+  .hero::before { content: ''; position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 700px; height: 500px; background: radial-gradient(ellipse at center, rgba(99,102,241,0.12) 0%, transparent 70%); pointer-events: none; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3); color: var(--accent2); font-size: 0.8rem; font-weight: 600; padding: 6px 16px; border-radius: 999px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 32px; }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-  .profile-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(99,102,241,0.4);
-    box-shadow: 0 0 40px rgba(99,102,241,0.2);
-    margin-bottom: 28px;
-  }
-  .hero h1 {
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 900;
-    color: var(--white);
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-    margin-bottom: 16px;
-  }
-  .hero h1 .highlight {
-    background: linear-gradient(135deg, var(--accent2) 0%, #c4b5fd 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  .profile-img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(99,102,241,0.4); box-shadow: 0 0 40px rgba(99,102,241,0.2); margin-bottom: 28px; }
+  .hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900; color: var(--white); letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 16px; }
+  .hero h1 .highlight { background: linear-gradient(135deg, var(--accent2) 0%, #c4b5fd 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .hero-role { font-size: 1.2rem; color: var(--muted); font-weight: 400; margin-bottom: 24px; }
   .hero-hook { font-size: 1.05rem; color: #9090b0; max-width: 580px; line-height: 1.7; margin-bottom: 40px; }
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent);
-    color: var(--white);
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.2s;
-    box-shadow: 0 0 30px rgba(99,102,241,0.3);
-  }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--white); padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 0 30px rgba(99,102,241,0.3); }
   .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 0 40px rgba(99,102,241,0.5); }
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: transparent;
-    color: var(--text);
-    padding: 13px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: 1px solid var(--border);
-    transition: all 0.2s;
-  }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--text); padding: 13px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 1px solid var(--border); transition: all 0.2s; }
   .btn-ghost:hover { border-color: rgba(99,102,241,0.4); color: var(--white); background: rgba(99,102,241,0.08); transform: translateY(-2px); }
-  .stat-bar {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background: rgba(15,15,26,0.6);
-    padding: 28px 24px;
-    flex-wrap: wrap;
-  }
+  .stat-bar { position: relative; z-index: 1; display: flex; justify-content: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(15,15,26,0.6); padding: 28px 24px; flex-wrap: wrap; }
   .stat-item { text-align: center; padding: 0 48px; border-right: 1px solid var(--border); }
   .stat-item:last-child { border-right: none; }
   .stat-num { font-size: 2rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px; }
@@ -196,15 +56,7 @@
   .section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; color: var(--white); letter-spacing: -0.03em; margin-bottom: 60px; line-height: 1.15; }
   .section-title .dim { color: var(--muted); font-weight: 400; }
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
-  .project-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-  }
+  .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
   .project-card:hover { transform: translateY(-6px); border-color: var(--border-hover); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(99,102,241,0.08); }
   .project-thumb { height: 180px; overflow: hidden; background: var(--bg2); border-bottom: 1px solid var(--border); }
   .project-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s; opacity: 0.85; }
@@ -225,48 +77,40 @@
   .skill-list li { display: flex; align-items: center; gap: 10px; font-size: 0.93rem; color: var(--muted); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
   .skill-list li:last-child { border-bottom: none; }
   .skill-list i { color: var(--accent); width: 16px; font-size: 0.85rem; }
-  .exp-wrapper { max-width: 720px; }
+  /* EXPERIENCE */
+  .exp-wrapper { max-width: 760px; }
   .exp-item { position: relative; padding-left: 28px; padding-bottom: 50px; border-left: 1px solid var(--border); }
   .exp-item:last-child { padding-bottom: 0; border-left: 1px solid transparent; }
-  .exp-dot { position: absolute; left: -5px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px rgba(99,102,241,0.6); }
-  .exp-role { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 2px; }
-  .exp-company { font-size: 0.95rem; color: var(--accent2); font-weight: 600; margin-bottom: 4px; }
-  .exp-date { font-size: 0.82rem; color: var(--muted); font-weight: 500; display: block; margin-bottom: 16px; }
+  .exp-dot { position: absolute; left: -5px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px rgba(99,102,241,0.6); }
+  .exp-dot.current { background: #22c55e; box-shadow: 0 0 12px rgba(34,197,94,0.6); }
+  .exp-header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+  .exp-role { font-size: 1.05rem; font-weight: 700; color: var(--white); }
+  .exp-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 999px; background: rgba(34,197,94,0.12); color: #4ade80; border: 1px solid rgba(34,197,94,0.25); white-space: nowrap; }
+  .exp-company { font-size: 0.95rem; color: var(--accent2); font-weight: 600; margin-bottom: 3px; }
+  .exp-date { font-size: 0.82rem; color: var(--muted); font-weight: 500; display: block; margin-bottom: 14px; }
   .exp-bullets { padding-left: 18px; }
-  .exp-bullets li { color: var(--muted); font-size: 0.93rem; margin-bottom: 10px; line-height: 1.6; }
+  .exp-bullets li { color: var(--muted); font-size: 0.92rem; margin-bottom: 9px; line-height: 1.6; }
   .exp-bullets li strong { color: var(--text); }
+  /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
   @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } .projects-grid { grid-template-columns: 1fr; } .stat-item { padding: 0 24px; } }
-  .about-text p { color: var(--muted); font-size: 0.98rem; line-height: 1.75; margin-bottom: 16px; }
+  .about-text p { color: var(--muted); font-size: 0.97rem; line-height: 1.75; margin-bottom: 16px; }
   .about-text p strong { color: var(--text); }
-  .edu-item { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 16px; }
+  .about-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .about-pill { background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); color: var(--accent2); font-size: 0.78rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; letter-spacing: 0.3px; }
+  /* EDUCATION */
+  .edu-item { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 16px; transition: border-color 0.3s; }
+  .edu-item:hover { border-color: rgba(99,102,241,0.3); }
+  .edu-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
   .edu-degree { font-size: 1rem; font-weight: 700; color: var(--white); }
-  .edu-school { font-size: 0.9rem; color: var(--accent2); font-weight: 600; margin: 4px 0; }
-  .edu-date { font-size: 0.82rem; color: var(--muted); }
-  .edu-notes { margin-top: 10px; padding-left: 16px; list-style: disc; }
-  .edu-notes li { font-size: 0.85rem; color: var(--muted); margin-bottom: 4px; }
-  .cta-section {
-    position: relative;
-    z-index: 1;
-    margin: 0 24px 80px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 80px 40px;
-    text-align: center;
-    overflow: hidden;
-  }
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 500px;
-    height: 300px;
-    background: radial-gradient(ellipse, rgba(99,102,241,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
+  .edu-date-pill { font-size: 0.72rem; color: var(--muted); background: rgba(255,255,255,0.05); padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+  .edu-school { font-size: 0.88rem; color: var(--accent2); font-weight: 600; margin-bottom: 10px; }
+  .edu-notes { list-style: none; padding: 0; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px; }
+  .edu-notes li { font-size: 0.83rem; color: var(--muted); margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
+  .edu-notes li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent2); flex-shrink: 0; }
+  /* CTA */
+  .cta-section { position: relative; z-index: 1; margin: 0 24px 80px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 80px 40px; text-align: center; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(99,102,241,0.12) 0%, transparent 70%); pointer-events: none; }
   .cta-section h2 { font-size: 2rem; font-weight: 800; color: var(--white); margin-bottom: 14px; letter-spacing: -0.03em; position: relative; }
   .cta-section p { color: var(--muted); margin-bottom: 32px; font-size: 1rem; position: relative; }
   .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
@@ -295,13 +139,12 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-badge">Available for Summer 2026 Internships</div>
+  <div class="hero-badge">MS Business Analytics, University of Maryland</div>
   <img src="profile.jpeg" alt="Kunal Roy Chowdhury" class="profile-img">
   <h1>Kunal Roy<br><span class="highlight">Chowdhury</span></h1>
   <div class="hero-role">Business Analyst &amp; Data Strategist</div>
   <p class="hero-hook">
-    Former Risk Consultant turning messy data into strategic decisions.
-    Leveraging Fortune 10 risk experience to build ML models that predict outcomes, not just report them.
+    Top 5% performer among 3,500+ global consultants at Protiviti. Now combining Fortune 10 risk experience with ML, predictive modeling, and GenAI at UMD Smith. Published researcher. Trilingual.
   </p>
   <div class="hero-actions">
     <a href="#projects" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
@@ -311,8 +154,8 @@
 
 <div class="stat-bar">
   <div class="stat-item">
-    <div class="stat-num">9+</div>
-    <div class="stat-label">Projects</div>
+    <div class="stat-num">Top 5%</div>
+    <div class="stat-label">of 3,500+ Consultants</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">70+</div>
@@ -351,8 +194,8 @@
       </div>
       <div class="card-body">
         <div class="project-title">CAVA Growth Strategy</div>
-        <div class="tech-stack"><span class="tech-tag">Excel</span><span class="tech-tag">PowerPoint</span></div>
-        <div class="project-desc">Designed a "Sustainable Moat" strategy leveraging vertical integration to enable <strong>14% underpricing</strong> vs. competitors. Built a market selection model targeting high HHI regions in Texas and Florida.</div>
+        <div class="tech-stack"><span class="tech-tag">Excel</span><span class="tech-tag">Python</span><span class="tech-tag">PowerPoint</span></div>
+        <div class="project-desc">Designed a "Sustainable Moat" strategy using vertical integration to enable <strong>14% underpricing</strong> vs. competitors. Built a supply chain optimization model and market selection targeting high HHI regions in Texas and Florida.</div>
         <a href="https://github.com/kunalrc33xx/cava-growth-strategy" target="_blank" class="project-link">View Strategy Deck <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -376,7 +219,7 @@
       <div class="card-body">
         <div class="project-title">Predicting Health Risks (ML)</div>
         <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">Scikit-Learn</span><span class="tech-tag">Random Forest</span></div>
-        <div class="project-desc">Built a Random Forest model with <strong>95.3% accuracy</strong> to predict obesity levels. Used K-Means clustering to identify vegetable consumption as a top predictor over simple weight metrics.</div>
+        <div class="project-desc">Built a Random Forest classifier with SMOTE to address class imbalance, achieving <strong>95.3% accuracy and 98% recall</strong> for high-risk groups. K-Means clustering identified vegetable consumption as the top predictor.</div>
         <a href="https://github.com/kunalrc33xx/obesity-level-prediction-ml" target="_blank" class="project-link">View Code &amp; Model <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -400,7 +243,7 @@
       <div class="card-body">
         <div class="project-title">B2B Operational Analysis</div>
         <div class="tech-stack"><span class="tech-tag">Excel</span><span class="tech-tag">Data Viz</span></div>
-        <div class="project-desc">Uncovered a critical quality issue causing <strong>47% of complaints</strong>. Validated the roadmap for digital transformation based on offline user behavior (N=50).</div>
+        <div class="project-desc">Internship project at Ucliq. Uncovered a critical quality issue causing <strong>47% of complaints</strong>. Actionable insights influenced operational expansion and improved customer satisfaction.</div>
         <a href="https://github.com/kunalrc33xx/ucliq-market-analysis" target="_blank" class="project-link">View Insights <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -424,7 +267,7 @@
       <div class="card-body">
         <div class="project-title">NYC Taxi Fleet Positioning</div>
         <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">Optimization</span><span class="tech-tag">Data Analysis</span></div>
-        <div class="project-desc">Optimized taxi fleet positioning across NYC zones using demand forecasting and operations research. Reduced idle time and improved pickup efficiency by matching supply to predicted demand.</div>
+        <div class="project-desc">Optimized taxi fleet positioning across NYC zones using demand forecasting and operations research. Reduced idle time by matching supply to predicted demand patterns.</div>
         <a href="https://github.com/kunalrc33xx/nyc-taxi-fleet-positioning" target="_blank" class="project-link">View Analysis <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -436,7 +279,7 @@
       <div class="card-body">
         <div class="project-title">Stack Overflow Survey, Tableau Story</div>
         <div class="tech-stack"><span class="tech-tag">Tableau</span><span class="tech-tag">Data Viz</span><span class="tech-tag">49,191 Respondents</span></div>
-        <div class="project-desc">Built a five-dashboard Tableau Story from the 2025 Stack Overflow Survey. Found that <strong>67.3%</strong> of developers learned AI tools last year, while 10.3% report friction with existing Stack Overflow workflows.</div>
+        <div class="project-desc">Five-dashboard Tableau Story from the 2025 Stack Overflow Survey across 178 countries. Found <strong>67.3%</strong> of developers learned AI tools last year; 10.3% report friction with Stack Overflow workflows.</div>
         <a href="https://public.tableau.com/app/profile/kunal.roy.chowdhury/viz/StackOverflowSurveyTableauStoryGroup1/OurTableauStory" target="_blank" class="project-link">View on Tableau Public <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -456,7 +299,7 @@
         <li><i class="fas fa-code"></i> Python (Pandas, Scikit-Learn)</li>
         <li><i class="fas fa-chart-bar"></i> R Studio (Regression, Stats)</li>
         <li><i class="fas fa-database"></i> SQL</li>
-        <li><i class="fas fa-robot"></i> Machine Learning</li>
+        <li><i class="fas fa-robot"></i> Machine Learning &amp; GenAI</li>
       </ul>
     </div>
     <div class="skill-card">
@@ -482,60 +325,125 @@
 
 <hr class="section-divider">
 
+<!-- EXPERIENCE -->
 <section class="section" id="experience">
   <div class="section-label">Career</div>
   <div class="section-title">Experience <span class="dim">/ History</span></div>
   <div class="exp-wrapper">
+
+    <div class="exp-item">
+      <div class="exp-dot current"></div>
+      <div class="exp-header">
+        <div class="exp-role">Research Assistant</div>
+        <span class="exp-badge">Current</span>
+      </div>
+      <div class="exp-company">University of Maryland, College Park</div>
+      <span class="exp-date">March 2026 - Present</span>
+      <ul class="exp-bullets">
+        <li>Designed and executed quantitative tracking of student queries and registration metrics for the 2026 UMD Agentic AI Challenge, driving measurable increases in participation through data-informed advertising strategies.</li>
+        <li>Coordinated event logistics and provided analytical support to judges during the Agentic AI Case Competition, synthesizing performance data to ensure high-quality evaluation of autonomous AI solutions.</li>
+        <li>Collaborated with the Division of Information Technology and industry partners to conduct structural analysis and refinement of real-world case models, enhancing statistical robustness and business applicability of AI-driven solutions.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dot current"></div>
+      <div class="exp-header">
+        <div class="exp-role">President, MS Business Analytics Association</div>
+        <span class="exp-badge">Current</span>
+      </div>
+      <div class="exp-company">Robert H. Smith School of Business, UMD</div>
+      <span class="exp-date">December 2025 - Present</span>
+      <ul class="exp-bullets">
+        <li>Led data-driven initiatives for the MS Business Analytics cohort. Coordinated events and prepared analytical briefings for leadership and council members.</li>
+        <li>Maintained engagement trackers and performed quantitative analysis to identify synergy opportunities between student cohorts, faculty, and external industry partners.</li>
+        <li>Oversaw strategic communication and operational metrics for the association, ensuring all stakeholder interactions were professionally documented and aligned.</li>
+      </ul>
+    </div>
+
     <div class="exp-item">
       <div class="exp-dot"></div>
-      <div class="exp-role">Consultant, Risk &amp; Compliance</div>
+      <div class="exp-role">Consultant, Enterprise Risk &amp; Strategy</div>
       <div class="exp-company">Protiviti</div>
       <span class="exp-date">January 2025 - June 2025</span>
       <ul class="exp-bullets">
-        <li><strong>Strategic ERM Frameworks:</strong> Collaborated with a team of eight to develop and refine Enterprise Risk Management frameworks, integrating risk mitigation directly into client strategic planning.</li>
-        <li><strong>Tech Driven Efficiency:</strong> Developed and optimized a project tracking tool using Azure DevOps, enhancing transparency and accountability across multiple engagements.</li>
-        <li><strong>Impactful Gap Analysis:</strong> Identified 30+ design gaps and resolved 15+ regulatory compliance gaps, contributing to a 30% improvement in control effectiveness.</li>
+        <li><strong>Quarterly Rising Accelerator Award</strong> — recognized in the top 5% of 3,500+ global consultants for exceptional project delivery.</li>
+        <li>Led a team of 8 junior consultants in developing and refining ERM frameworks, integrating quantitative risk analysis directly into clients' strategic planning and decision-making processes.</li>
+        <li>Engineered a real-time project tracking platform using Azure DevOps, consolidating multi-workstream metrics and reducing status reporting latency through advanced data aggregation.</li>
+        <li>Performed quantitative workflow analysis to identify 30+ process inefficiencies, delivering data-driven remediation strategies that improved operating effectiveness by 30%.</li>
       </ul>
     </div>
+
     <div class="exp-item">
       <div class="exp-dot"></div>
-      <div class="exp-role">Junior Consultant</div>
+      <div class="exp-role">Junior Consultant, Risk &amp; Compliance Analytics</div>
       <div class="exp-company">Protiviti</div>
       <span class="exp-date">September 2023 - December 2024</span>
       <ul class="exp-bullets">
-        <li><strong>Large Scale Control Testing:</strong> Led end-to-end design and operational testing of 70+ internal controls for a Fortune 10 tech company, ensuring FCPA and SOX compliance.</li>
-        <li><strong>Project Leadership:</strong> Spearheaded 10+ international projects focused on process optimization, coordinating cross-functional stakeholders to achieve a 97% on-time completion rate.</li>
-        <li><strong>Audit Delivery:</strong> Delivered comprehensive audit reports to senior management, identifying corrective actions that uncovered potential future revenue opportunities.</li>
+        <li>Led end-to-end design and operational testing of <strong>70+ internal controls</strong> for a Fortune 10 tech company, ensuring compliance with FCPA, Partner Agreement requirements, and SOX regulations.</li>
+        <li>Partnered with cross-functional stakeholders across international projects to optimize business processes, sustaining a <strong>97% on-time completion rate</strong> and driving measurable revenue growth.</li>
+        <li>Designed and delivered data-driven corrective action frameworks and comprehensive audit reports for senior management, quantifying future revenue potential and mitigating regulatory risks.</li>
       </ul>
     </div>
+
   </div>
 </section>
 
 <hr class="section-divider">
 
+<!-- ABOUT + EDUCATION -->
 <section class="section" id="about">
   <div class="section-label">Background</div>
   <div class="section-title">My Journey <span class="dim">/ About</span></div>
   <div class="about-grid">
     <div class="about-text">
       <p>I don't just analyze data. I translate it into business value.</p>
-      <p>My career started in <strong>Risk Consulting at Protiviti</strong>, where I learned how businesses break by analyzing gaps in processes, compliance, and strategy for Fortune 10 clients. While I loved the problem solving, I realized the future of decision making wasn't just in audits, but in <strong>predictive analytics</strong>.</p>
-      <p>Now, pursuing my <strong>MS in Business Analytics at UMD</strong>, I combine that strategic rigor with technical tools like Python, R, and Machine Learning. I am looking for roles where I can bridge the gap between technical data teams and executive strategy.</p>
+      <p>My career started in <strong>Risk Consulting at Protiviti</strong>, where I earned recognition as a <strong>top 5% performer among 3,500+ global consultants</strong> by delivering quantitative risk analysis and statistical insights to Fortune 10 clients. I learned how businesses break at the process level and how data can fix it.</p>
+      <p>That experience pushed me toward predictive analytics. Now, as a <strong>Research Assistant and student at UMD Smith School of Business</strong>, I combine that strategic rigor with hands-on ML, predictive modeling, and Generative AI. I've also published research on AI infrastructure strategy in India Strategic.</p>
+      <p>I'm trilingual in <strong>English, Hindi, and Bengali</strong>, and I hold F-1 visa status with full CPT/OPT work authorization. I'm looking for roles where I can bridge technical data teams and executive strategy.</p>
+      <div class="about-pills">
+        <span class="about-pill">Published Researcher</span>
+        <span class="about-pill">Top 5% at Protiviti</span>
+        <span class="about-pill">Trilingual</span>
+        <span class="about-pill">CPT/OPT Eligible</span>
+        <span class="about-pill">Agentic AI</span>
+      </div>
     </div>
     <div>
       <div class="edu-item">
-        <div class="edu-degree">MS in Business Analytics</div>
-        <div class="edu-school">University of Maryland, Smith School of Business</div>
-        <div class="edu-date">Expected December 2026</div>
+        <div class="edu-top">
+          <div class="edu-degree">MS, Business Analytics &amp; AI</div>
+          <span class="edu-date-pill">Aug 2025 - Dec 2026</span>
+        </div>
+        <div class="edu-school">University of Maryland, Robert H. Smith School of Business</div>
         <ul class="edu-notes">
-          <li>President, Business Analytics Association</li>
-          <li>Student Ambassador, Professional Development</li>
+          <li>Terrapin Scholar | GRE: 325</li>
+          <li>President, MS Business Analytics Association</li>
+          <li>Smith Masters Student Ambassador</li>
+          <li>Research Assistant, Agentic AI Challenge</li>
         </ul>
       </div>
       <div class="edu-item">
-        <div class="edu-degree">BBA</div>
-        <div class="edu-school">GGS Indraprastha University</div>
-        <div class="edu-date">2019 - 2022 &nbsp;|&nbsp; GPA: 3.52</div>
+        <div class="edu-top">
+          <div class="edu-degree">Certification in Data Analytics with GenAI</div>
+          <span class="edu-date-pill">Jan 2025 - Jul 2025</span>
+        </div>
+        <div class="edu-school">Indian Institute of Technology (IIT), Guwahati</div>
+        <ul class="edu-notes">
+          <li>Certificate of Excellence in Analytics &amp; Excel</li>
+          <li>Data Visualization with Power BI</li>
+        </ul>
+      </div>
+      <div class="edu-item">
+        <div class="edu-top">
+          <div class="edu-degree">Bachelor of Business Administration</div>
+          <span class="edu-date-pill">Aug 2019 - Jun 2022</span>
+        </div>
+        <div class="edu-school">Guru Gobind Singh Indraprastha University, New Delhi</div>
+        <ul class="edu-notes">
+          <li>CGPA: 8.81 / 10 (approx. 3.52 GPA)</li>
+          <li>Internship: Market research at Ucliq (B2B meat supply)</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -543,7 +451,7 @@
 
 <div class="cta-section">
   <h2>Ready to build data-driven strategies?</h2>
-  <p>Currently open to internship opportunities in Data Analytics and Strategy for Summer 2026.</p>
+  <p>Open to full-time roles and internships in Data Analytics, Strategy, and Enterprise Risk. F-1 with CPT/OPT authorization.</p>
   <div class="cta-actions">
     <a href="mailto:kunalrc33@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i> Email Me</a>
     <a href="Kunal_Chowdhury_Resume.pdf" target="_blank" class="btn-ghost"><i class="fas fa-file-alt"></i> Download Resume</a>
@@ -557,4 +465,4 @@
 </footer>
 
 </body>
-      </html>
+  </html>
